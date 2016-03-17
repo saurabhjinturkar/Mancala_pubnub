@@ -107,13 +107,11 @@
   	ga('send', 'pageview');
 
 </script>
-
 <script>
-	var player = 1
+	var player = 2
 	var gameStarted = true;
-	var turn = true;
+	var turn = false;
 	var activeSession = -1;
 </script>
-
 </body>
 </html>

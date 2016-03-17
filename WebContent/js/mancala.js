@@ -28,10 +28,15 @@ $(document).ready(function() {
 				return;
 			}
 			var msg = {};
-			msg.event = "play";
+			msg.event = "serverplay";
 			msg.hole = ("" + event.target.id).substring(4);
 			msg.sessionId = activeSession;
-			socket.send(JSON.stringify(msg));
+//			socket.send(JSON.stringify(msg));
+			pubnub.publish({
+			    channel: 'mancala',        
+			    message: JSON.stringify(msg),
+			    callback : function(m){console.log(m)}
+			});
 		}
 	});
 });
